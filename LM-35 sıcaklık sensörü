@@ -1,0 +1,25 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12,11,5,4,3,2);
+int sicaklikpini=A0;
+int sicaklik=0;
+
+void setup()
+{
+  lcd.begin(16,2);
+  
+}
+
+void loop()
+{
+  lcd.clear();
+  sicaklik=analogRead(sicaklikpini);
+  
+  sicaklik=sicaklik/9.31;
+  
+  lcd.print("Sicaklik=");
+  lcd.print(sicaklik);
+  lcd.print("C ");
+  delay(1000);
+  
+  
+ }

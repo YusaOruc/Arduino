@@ -1,0 +1,16 @@
+int pot = A1;
+int motor = 6;
+int potDeger; 
+
+void setup()
+{
+  pinMode(A1, INPUT);
+  pinMode(6, OUTPUT); 
+
+}
+
+void loop()
+{
+  potDeger = analogRead(pot);
+  analogWrite(motor, map(potDeger, 0, 1023, 0, 255));
+}

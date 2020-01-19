@@ -1,0 +1,21 @@
+int piezoPin = 8; // Piezonun bağlandığı pin D8
+int ldrPin = A0; // LDR’ nin bağlandığı pin A0
+int ldrValue = 0; // LDR değerini okuyacağımız
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  ldrValue = analogRead(ldrPin); 
+  tone(piezoPin,1000);
+  delay(25);
+  noTone(piezoPin);
+  delay(ldrValue);
+  
+  
+  
+  
+}

@@ -1,0 +1,34 @@
+#define LED1 7 
+#define LED2 6
+#define LED3 5 
+long analog; 
+float isi; 
+int hiz;
+void setup()
+{ pinMode(11,OUTPUT);
+  pinMode(7,OUTPUT); 
+  pinMode(6,OUTPUT); 
+  pinMode(5,OUTPUT);}
+void loop()
+{ analog=analogRead(0);
+  isi=analog*0.488; 
+  hiz=isi; 
+  analogWrite(11,hiz); 
+  ledyak();}
+void ledyak(){
+ isi=isi-49;
+ if(isi>0 & isi<20)
+ {digitalWrite(LED1,HIGH);
+  digitalWrite(LED2,LOW);
+  digitalWrite(LED3,LOW);}
+ if(isi>20 & isi<50)
+ {
+ digitalWrite(LED1,LOW);
+ digitalWrite(LED2,HIGH);
+ digitalWrite(LED3,LOW);}
+ if(isi>50 & isi<100)
+ {
+ digitalWrite(LED1,LOW);
+ digitalWrite(LED2,LOW);
+ digitalWrite(LED3,HIGH);
+ }}
